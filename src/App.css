@@ -6,3 +6,25 @@
 .App > div {
   margin-right: 50px;
 }
+
+.completedTask {
+  opacity: 0.5;
+}
+
+.filter-header {
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 20px;
+  font-size: 14px;
+  color: white;
+  background-color: cadetblue;
+  padding: 5px;
+}
+.filter-button {
+  color: white;
+  background-color: cadetblue;
+}
+.error {
+  outline: none;
+  border: 2px solid red;
+}

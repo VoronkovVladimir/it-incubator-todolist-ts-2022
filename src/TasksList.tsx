@@ -5,6 +5,7 @@ import {TaskType} from "./TodoList";
 type TasksListPropsType = {
     tasks: Array<TaskType>
     removeTask: (taskID: string) => void
+    changeTaskStatus: (taskID: string, isDone: boolean) => void
 }
 
 const TasksList = (props: TasksListPropsType) => {
@@ -13,15 +14,21 @@ const TasksList = (props: TasksListPropsType) => {
             <Task
                 key={task.id}
                 {...task}
-                removeTask = {props.removeTask}/>)
+                removeTask={props.removeTask}
+                changeTaskStatus={props.changeTaskStatus}
+            />
+        )
     })
+    const tasksList = tasksComponentsList.length
+        ?
+        <ul>
+            {tasksComponentsList}
+        </ul>
+        :
+        <span>Tasks list is empty</span>
 
     return (
-        <ul>
-            {/*<Task id={props.tasks[0].id} title={props.tasks[0].title} isDone={props.tasks[0].isDone}/>*/}
-            {/*<Task {...props.tasks[1]} />*/}
-            { tasksComponentsList }
-        </ul>
+        tasksList
     );
 };
 
